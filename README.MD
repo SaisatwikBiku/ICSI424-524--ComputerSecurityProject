@@ -1,4 +1,11 @@
-Teammates:
+# ICSI 424/524 Computer Security Project
 
-Sai Satwik Bikumandla: AlbanyID: 001655014
-David Aduku: AlbanyID: 001546382
+This repository houses the deliverables for our ICSI 424/524 Computer Security team project. 
+
+## Team
+
+| Name | Role | UAlbany ID | Focus Areas |
+| --- | --- | --- | --- |
+| Sai Satwik Bikumandla | Project Lead & Analyst | 001655014 | TBD |
+| David Aduku | Security Engineer | 001546382 | TBD |
+
