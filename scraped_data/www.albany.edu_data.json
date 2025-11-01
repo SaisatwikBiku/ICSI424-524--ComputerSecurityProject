@@ -1,0 +1,284 @@
+{
+    "url": "https://www.albany.edu/",
+    "timestamp": "2025-11-01 14:20:39",
+    "html_title": "University at Albany - State University of New York",
+    "meta_tags": [
+        {
+            "charset": "utf-8"
+        },
+        {
+            "name": "description",
+            "content": "The University at Albany is the premier public research university in New York’s Capital Region and offers more than 17,000 students the expansive opportunities of a large university in an environment designed to foster individual success."
+        },
+        {
+            "property": "og:image",
+            "content": "https://www.albany.edu/sites/default/files/University%20at%20Albany%20Campus.jpg"
+        },
+        {
+            "property": "og:image:url",
+            "content": "https://www.albany.edu/sites/default/files/University%20at%20Albany%20Campus.jpg"
+        },
+        {
+            "property": "og:image:secure_url",
+            "content": "https://www.albany.edu/sites/default/files/University%20at%20Albany%20Campus.jpg"
+        },
+        {
+            "name": "Generator",
+            "content": "Drupal 10 (https://www.drupal.org)"
+        },
+        {
+            "name": "MobileOptimized",
+            "content": "width"
+        },
+        {
+            "name": "HandheldFriendly",
+            "content": "true"
+        },
+        {
+            "name": "viewport",
+            "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+            "name": "google-site-verification",
+            "content": "3ylQoSVoRxIGuVYjoSQKrh9IKwhbNtsr7U9CzQV01vU"
+        }
+    ],
+    "headers": {
+        "Date": "Sat, 01 Nov 2025 18:20:39 GMT",
+        "Content-Type": "text/html; charset=UTF-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Server": "cloudflare",
+        "Cache-Control": "max-age=2764800, public",
+        "x-drupal-dynamic-cache": "UNCACHEABLE (poor cacheability)",
+        "content-language": "en",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "SAMEORIGIN",
+        "expires": "Sun, 19 Nov 1978 05:00:00 GMT",
+        "vary": "Cookie,Accept-Encoding",
+        "x-generator": "Drupal 10 (https://www.drupal.org)",
+        "x-drupal-cache": "MISS",
+        "last-modified": "Sat, 01 Nov 2025 18:15:58 GMT",
+        "cf-cache-status": "DYNAMIC",
+        "x-request-id": "v-d09e436e-b74e-11f0-a9d4-4f52dadc9a2f",
+        "x-ah-environment": "prod",
+        "Age": "276",
+        "via": "varnish",
+        "x-cache": "HIT",
+        "x-cache-hits": "46",
+        "Content-Encoding": "gzip",
+        "CF-RAY": "997d684a5feac4fb-EWR"
+    },
+    "links": [
+        "https://www.albany.edu/#main-content",
+        "https://www.albany.edu/",
+        "https://www.albany.edu/admissions-aid#apply",
+        "https://www.albany.edu/giving",
+        "https://www.albany.edu/myualbany",
+        "https://www.albany.edu/academics",
+        "https://www.albany.edu/academics",
+        "https://www.albany.edu/academics/undergraduate-majors-minors",
+        "https://www.albany.edu/graduate/graduate-programs",
+        "https://www.albany.edu/pace/programs",
+        "https://www.albany.edu/online",
+        "https://www.albany.edu/academic-advising",
+        "https://www.albany.edu/registrar/academic-calendar",
+        "https://library.albany.edu/",
+        "https://www.albany.edu/admissions-aid",
+        "https://www.albany.edu/admissions",
+        "https://www.albany.edu/admissions/how-apply-transfer-student",
+        "https://www.albany.edu/graduate",
+        "https://www.albany.edu/international-admissions",
+        "https://www.albany.edu/admissions/admissions-partnership-programs",
+        "https://www.albany.edu/visiting-non-degree",
+        "https://www.albany.edu/cost-aid/tuition-fees",
+        "https://www.albany.edu/cost-aid/financial-aid",
+        "https://www.albany.edu/cost-aid/apply-additional-scholarships ",
+        "https://www.albany.edu/admissions/campus-tours-events",
+        "https://www.albany.edu/student-life",
+        "https://www.albany.edu/residential-life",
+        "https://www.albany.edu/parking-transit",
+        "https://www.albany.edu/campus-maps-and-directions",
+        "https://ualbany.sodexomyway.com/",
+        "https://myinvolvement.org/organizations",
+        "https://career.albany.edu/",
+        "https://www.albany.edu/arts",
+        "https://www.albany.edu/student-life",
+        "https://ualbanysports.com/",
+        "https://www.albany.edu/about-ualbany",
+        "https://www.albany.edu/about/administration",
+        "https://www.alumni.albany.edu/",
+        "https://www.albany.edu/public-engagement",
+        "https://www.albany.edu/news-center",
+        "https://events.albany.edu/",
+        "https://www.albany.edu/human-resources/careers-ualbany",
+        "https://www.albany.edu/inclusive-excellence",
+        "https://www.albany.edu/about/directory",
+        "https://www.albany.edu/a-z-index",
+        "https://www.albany.edu/research-ualbany",
+        "https://www.albany.edu/research-economic-development",
+        "https://www.albany.edu/minerva-center",
+        "https://www.albany.edu/research-economic-development/institutes-centers-labs",
+        "https://www.albany.edu/news-center/experts",
+        "https://ualbanysports.com/",
+        "https://www.albany.edu/search-results",
+        "https://www.albany.edu/about-ualbany",
+        "https://www.albany.edu/about/administration",
+        "https://www.alumni.albany.edu/",
+        "https://www.albany.edu/public-engagement",
+        "https://www.albany.edu/news-center",
+        "https://events.albany.edu/",
+        "https://www.albany.edu/human-resources/careers-ualbany",
+        "https://www.albany.edu/inclusive-excellence",
+        "https://www.albany.edu/about/directory",
+        "https://www.albany.edu/a-z-index",
+        "https://www.albany.edu/academics",
+        "https://www.albany.edu/academics",
+        "https://www.albany.edu/academics/undergraduate-majors-minors",
+        "https://www.albany.edu/graduate/graduate-programs",
+        "https://www.albany.edu/pace/programs",
+        "https://www.albany.edu/online",
+        "https://www.albany.edu/academic-advising",
+        "https://www.albany.edu/registrar/academic-calendar",
+        "https://library.albany.edu/",
+        "https://www.albany.edu/admissions-aid",
+        "https://www.albany.edu/admissions",
+        "https://www.albany.edu/admissions/how-apply-transfer-student",
+        "https://www.albany.edu/graduate/admissions",
+        "https://www.albany.edu/international-admissions",
+        "https://www.albany.edu/admissions/admissions-partnership-programs",
+        "https://www.albany.edu/visiting-non-degree",
+        "https://www.albany.edu/cost-aid/tuition-fees",
+        "https://www.albany.edu/cost-aid/financial-aid",
+        "https://www.albany.edu/cost-aid/apply-additional-scholarships",
+        "https://www.albany.edu/admissions/campus-tours-events",
+        "https://www.albany.edu/student-life",
+        "https://www.albany.edu/residential-life",
+        "https://www.albany.edu/parking-transit",
+        "https://www.albany.edu/campus-maps-and-directions",
+        "https://ualbany.sodexomyway.com/",
+        "https://myinvolvement.org/organizations",
+        "https://career.albany.edu/",
+        "https://www.albany.edu/arts",
+        "https://www.albany.edu/student-life",
+        "https://www.albany.edu/research-ualbany",
+        "https://www.albany.edu/research-economic-development",
+        "https://www.albany.edu/minerva-center",
+        "https://www.albany.edu/research-economic-development/institutes-centers-labs",
+        "https://www.albany.edu/news-center/experts",
+        "https://ualbanysports.com/",
+        "https://www.albany.edu/admissions-aid#apply",
+        "https://www.albany.edu/giving",
+        "https://www.albany.edu/myualbany",
+        "https://www.albany.edu/cnse/nanovember-2025",
+        "https://www.albany.edu/preview-day-registration",
+        "https://www.albany.edu/news-center/news/2025-ualbany-alum-omar-yaghi-85-shares-2025-nobel-prize-chemistry",
+        "https://www.albany.edu/the-college-tour",
+        "https://www.albany.edu/news-center/news/2025-ualbany-launches-new-ai-society-college-research-center",
+        "https://www.albany.edu/about/our-rankings",
+        "https://www.albany.edu/news-center/news/2024-study-ualbany-generates-more-1b-capital-region-economy",
+        "https://www.albany.edu/academics/undergraduate-majors-minors",
+        "https://www.albany.edu/graduate/graduate-programs",
+        "https://www.albany.edu/online",
+        "https://www.albany.edu/apply-now-old",
+        "https://www.albany.edu/admissions/campus-tours-events",
+        "https://www.albany.edu/research-ualbany",
+        "https://www.albany.edu/online-learning",
+        "https://www.albany.edu/",
+        "https://www.facebook.com/universityatalbany",
+        "https://twitter.com/ualbany/",
+        "https://www.instagram.com/ualbany/",
+        "https://www.youtube.com/c/ualbany",
+        "https://www.linkedin.com/school/university-at-albany/",
+        "https://tiktok.com/@ualbany",
+        "https://www.google.com/maps/place/1400+Washington+Ave,+Albany,+NY+12222/@42.6859115,-73.8287166,17z/data=!3m1!4b1!4m5!3m4!1s0x89de0b3ce5c93e45:0x4cdbe8d7b52fa412!8m2!3d42.6859115!4d-73.8265279",
+        "tel:5184423300",
+        "https://www.albany.edu/accessibility",
+        "https://wiki.albany.edu/display/public/askit/Internet+Privacy+Policy",
+        "https://www.albany.edu/title-IX"
+    ],
+    "forms": [
+        {
+            "action": "/search-results",
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": "q",
+                    "type": "text"
+                },
+                {
+                    "name": "sa",
+                    "type": "hidden"
+                },
+                {
+                    "name": "cx",
+                    "type": "hidden"
+                },
+                {
+                    "name": "cof",
+                    "type": "hidden"
+                },
+                {
+                    "name": "ie",
+                    "type": "hidden"
+                },
+                {
+                    "name": "siteurl",
+                    "type": "hidden"
+                },
+                {
+                    "name": "ref",
+                    "type": "hidden"
+                },
+                {
+                    "name": "ss",
+                    "type": "hidden"
+                },
+                {
+                    "name": "albanySearch",
+                    "type": "submit"
+                }
+            ]
+        },
+        {
+            "action": null,
+            "method": "GET",
+            "inputs": [
+                {
+                    "name": null,
+                    "type": "text"
+                }
+            ]
+        }
+    ],
+    "scripts": [
+        "https://www.albany.edu/sites/default/files/google_tag/primary/google_tag.script.js?t522j5",
+        "https://admissions.albany.edu/ping",
+        "https://api.meritpages.com/merit.js",
+        "https://www.albany.edu/themes/custom/albany/js/homepage_academic_search_box.js",
+        "https://www.albany.edu/sites/default/files/js/js_Y7bT4gpqtDG82gXLYa-9lPF9uSdIB-t7LQKmkWYnGcY.js?scope=footer&delta=0&language=en&theme=albany&include=eJxNyVEKgEAIBcALbeyRFrcsXoiKStTt-4v-BoZkkj79zCXXgFe2aVZZQd4_DQ8eUNQv3dwujrYL3ynYODq0-AgqmL75bCL-",
+        "https://cdn.jsdelivr.net/npm/entreprise7pro-bootstrap@3.4.8/dist/js/bootstrap.min.js",
+        "https://www.albany.edu/sites/default/files/js/js_eYLl1mrbYlyV-LrPRPfB_qQGWUXkUfgFjwsD4fvpYYE.js?scope=footer&delta=2&language=en&theme=albany&include=eJxNyVEKgEAIBcALbeyRFrcsXoiKStTt-4v-BoZkkj79zCXXgFe2aVZZQd4_DQ8eUNQv3dwujrYL3ynYODq0-AgqmL75bCL-",
+        "https://www.albany.edu/sites/default/files/css/css_zBfDFhKlfvyV4XhGghPZlZX3CGvhSljZdPoRZBaO3U8.css?delta=0&language=en&theme=albany&include=eJxFyFsOAjEIQNENYVkTtUxLpI8AdZzda0yMPzcnlzTTuLDqzKQ3j0tlVMhzhofRwsOo8zntAXdSHoUMf0jRuDMcyi9XKWwoI7gahcwBi4w-Xs2x2F6k6X_SHmtnFW9cwC8P7pjJGZ7Cp-O3qc-yld-6fD7R",
+        "https://cdn.jsdelivr.net/npm/entreprise7pro-bootstrap@3.4.8/dist/css/bootstrap.min.css",
+        "https://cdn.jsdelivr.net/npm/@unicorn-fail/drupal-bootstrap-styles@0.0.2/dist/3.1.1/7.x-3.x/drupal-bootstrap.min.css",
+        "https://cdn.jsdelivr.net/npm/@unicorn-fail/drupal-bootstrap-styles@0.0.2/dist/3.1.1/8.x-3.x/drupal-bootstrap.min.css",
+        "https://cdn.jsdelivr.net/npm/@unicorn-fail/drupal-bootstrap-styles@0.0.2/dist/3.2.0/7.x-3.x/drupal-bootstrap.min.css",
+        "https://cdn.jsdelivr.net/npm/@unicorn-fail/drupal-bootstrap-styles@0.0.2/dist/3.2.0/8.x-3.x/drupal-bootstrap.min.css",
+        "https://cdn.jsdelivr.net/npm/@unicorn-fail/drupal-bootstrap-styles@0.0.2/dist/3.3.1/7.x-3.x/drupal-bootstrap.min.css",
+        "https://cdn.jsdelivr.net/npm/@unicorn-fail/drupal-bootstrap-styles@0.0.2/dist/3.3.1/8.x-3.x/drupal-bootstrap.min.css",
+        "https://cdn.jsdelivr.net/npm/@unicorn-fail/drupal-bootstrap-styles@0.0.2/dist/3.4.0/8.x-3.x/drupal-bootstrap.min.css",
+        "https://www.albany.edu/sites/default/files/css/css_nEsQcWDh40fclgQX-yHMZhJHKoWPCkKuz_kq_1RoedY.css?delta=9&language=en&theme=albany&include=eJxFyFsOAjEIQNENYVkTtUxLpI8AdZzda0yMPzcnlzTTuLDqzKQ3j0tlVMhzhofRwsOo8zntAXdSHoUMf0jRuDMcyi9XKWwoI7gahcwBi4w-Xs2x2F6k6X_SHmtnFW9cwC8P7pjJGZ7Cp-O3qc-yld-6fD7R",
+        "https://www.albany.edu/communicationsmarketing/css/albany-ext-base.css",
+        "https://www.albany.edu/communicationsmarketing/css/albany-ext-responsive.css"
+    ],
+    "cookies": [],
+    "server_info": {},
+    "status_code": 200,
+    "technologies": {
+        "Server": "cloudflare"
+    },
+    "notes": [
+        "Missing security headers: Content-Security-Policy, Strict-Transport-Security, X-XSS-Protection"
+    ]
+}
