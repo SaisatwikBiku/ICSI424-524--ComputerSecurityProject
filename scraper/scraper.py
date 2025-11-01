@@ -1,111 +1,132 @@
-import re
-import hashlib
-import math
 import requests
 from bs4 import BeautifulSoup
-import tldextract
-import chardet
+from urllib.parse import urljoin, urlparse
+import json
+import datetime
+import os
+import shutil
 
-SUSPICIOUS_JS_KEYWORDS = [
-    "eval(", "new Function", "fromCharCode", "atob(", "unescape(", "document.cookie", "XMLHttpRequest", "fetch("
-]
-SECURITY_HEADERS = [
-    "Strict-Transport-Security", "Content-Security-Policy", "X-Frame-Options",
-    "X-Content-Type-Options", "Referrer-Policy", "Feature-Policy", "Permissions-Policy"
-]
-
-def shannon_entropy(data: bytes) -> float:
-    if not data:
-        return 0.0
-    counts = {}
-    for b in data:
-        counts[b] = counts.get(b, 0) + 1
-    entropy = 0.0
-    length = len(data)
-    for c in counts.values():
-        p = c / length
-        entropy -= p * math.log2(p)
-    return entropy
-
-def extract_urls(text: str):
-    return re.findall(r"https?://[^\s\"'<>]+", text)
-
-def safe_decode(content: bytes):
-    # Try requests apparent encoding, fall back to chardet or utf-8.
-    try:
-        text = content.decode('utf-8')
-    except Exception:
-        enc = chardet.detect(content).get('encoding') or 'utf-8'
-        try:
-            text = content.decode(enc, errors='replace')
-        except Exception:
-            text = content.decode('utf-8', errors='replace')
-    return text
-
-def extract_response_features(url: str, timeout=10):
-    r = requests.get(url, timeout=timeout, allow_redirects=True)
-    headers = {k: v for k, v in r.headers.items()}
-    body = r.content or b""
-    text = safe_decode(body)
-    soup = BeautifulSoup(text, "html.parser")
-
-    # Basic features
-    features = {
-        "url": r.url,
-        "status_code": r.status_code,
-        "content_type": headers.get("Content-Type", "").split(";")[0],
-        "content_length": len(body),
-        "sha256": hashlib.sha256(body).hexdigest(),
-        "entropy": shannon_entropy(body),
-        "num_redirects": len(r.history),
-        "response_time_ms": int(r.elapsed.total_seconds() * 1000),
+def scrape_website(url):
+    print(f"\n[+] Scanning: {url}\n{'='*50}")
+    data = {
+        "url": url,
+        "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "html_title": "",
+        "meta_tags": [],
+        "headers": {},
+        "links": [],
+        "forms": [],
+        "scripts": [],
+        "cookies": [],
+        "server_info": {},
+        "status_code": None,
+        "technologies": {},
+        "notes": []
     }
 
-    # Security headers presence
-    for h in SECURITY_HEADERS:
-        features[f"hdr_{h.lower().replace('-', '_')}"] = 1 if h in headers else 0
+    try:
+        # --- Send GET request ---
+        response = requests.get(url, timeout=10)
+        data["status_code"] = response.status_code
+        data["headers"] = dict(response.headers)
+        data["cookies"] = [dict(c) for c in response.cookies]
 
-    # Cookies and cookie flags
-    set_cookie = headers.get("Set-Cookie", "")
-    features["num_set_cookie"] = set_cookie.count("=") if set_cookie else 0
-    features["cookie_has_httponly"] = 1 if "httponly" in set_cookie.lower() else 0
-    features["cookie_has_secure"] = 1 if "secure" in set_cookie.lower() else 0
+        # --- Parse HTML ---
+        soup = BeautifulSoup(response.text, "html.parser")
 
-    # Extract script sources and inline script heuristics
-    script_tags = soup.find_all("script")
-    external_scripts = []
-    inline_script_text = []
-    for s in script_tags:
-        if s.get("src"):
-            external_scripts.append(s["src"])
-        else:
-            inline_script_text.append(s.get_text(" ", strip=True))
+        # Page title
+        if soup.title:
+            data["html_title"] = soup.title.string.strip()
 
-    features["num_external_scripts"] = len(external_scripts)
-    features["num_inline_scripts"] = len(inline_script_text)
-    combined_inline = " ".join(inline_script_text)
-    features["inline_js_eval_count"] = sum(combined_inline.count(k) for k in SUSPICIOUS_JS_KEYWORDS)
+        # Meta tags
+        for meta in soup.find_all("meta"):
+            data["meta_tags"].append(meta.attrs)
 
-    # Extract URLs/domains
-    all_urls = extract_urls(text)
-    features["num_urls_in_body"] = len(all_urls)
-    domains = set()
-    for u in all_urls + external_scripts:
-        ext = tldextract.extract(u)
-        domain = ".".join([p for p in (ext.domain, ext.suffix) if p])
-        if domain:
-            domains.add(domain)
-    features["num_unique_domains"] = len(domains)
+        # Extract all links (absolute URLs)
+        for link in soup.find_all("a", href=True):
+            full_link = urljoin(url, link['href'])
+            data["links"].append(full_link)
 
-    # Suspicious keyword counts
-    body_lower = text.lower()
-    suspicious_keywords = ["ransom", "miner", "wallet", "coinhive", "keylogger", "steal"]
-    features["suspicious_keyword_count"] = sum(body_lower.count(k) for k in suspicious_keywords)
+        # Extract forms
+        for form in soup.find_all("form"):
+            form_info = {
+                "action": form.get("action"),
+                "method": form.get("method", "GET").upper(),
+                "inputs": []
+            }
+            for inp in form.find_all("input"):
+                form_info["inputs"].append({
+                    "name": inp.get("name"),
+                    "type": inp.get("type", "text")
+                })
+            data["forms"].append(form_info)
 
-    return features
+        # Extract scripts and CSS files
+        for script in soup.find_all("script", src=True):
+            full_script = urljoin(url, script['src'])
+            data["scripts"].append(full_script)
 
-# Example usage:
+        for css in soup.find_all("link", rel="stylesheet"):
+            full_css = urljoin(url, css['href'])
+            data["scripts"].append(full_css)
+
+        # --- Technology Fingerprinting ---
+        server = response.headers.get("Server", "")
+        powered_by = response.headers.get("X-Powered-By", "")
+        if server:
+            data["technologies"]["Server"] = server
+        if powered_by:
+            data["technologies"]["X-Powered-By"] = powered_by
+
+        # --- Security Header Checks ---
+        required_headers = [
+            "Content-Security-Policy", "Strict-Transport-Security",
+            "X-Frame-Options", "X-XSS-Protection", "X-Content-Type-Options"
+        ]
+        missing_headers = [h for h in required_headers if h not in response.headers]
+        if missing_headers:
+            data["notes"].append(f"Missing security headers: {', '.join(missing_headers)}")
+
+        # --- HTTP/HTTPS check ---
+        if not url.startswith("https"):
+            data["notes"].append("Website uses HTTP instead of HTTPS — insecure connection.")
+
+    except requests.exceptions.RequestException as e:
+        data["notes"].append(f"Request failed: {str(e)}")
+
+    # --- Save data to file ---
+    filename = sanitize_filename(urlparse(url).netloc) + "_data.json"
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+        # change 'scraped_data' to the folder you want inside the repo
+        target_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scraped_data"))
+        os.makedirs(target_folder, exist_ok=True)
+
+        new_filepath = os.path.join(target_folder, filename)
+        try:
+            # Ensure the JSON ends up only in the scraped_data folder.
+            src = os.path.abspath(filename)
+            dst = os.path.abspath(new_filepath)
+            if src != dst:
+                try:
+                    shutil.move(src, dst)
+                except Exception:
+                    # Fallback for cross-device moves: copy then remove the source.
+                    shutil.copy2(src, dst)
+                    if os.path.exists(src):
+                        os.remove(src)
+            filename = dst
+        except Exception as e:
+            data.setdefault("notes", []).append(f"Could not move file to {target_folder}: {e}")
+    print(f"\n✅ Data saved to: {filename}\n")
+    return data
+
+
+def sanitize_filename(name):
+    # Clean invalid filename characters
+    return "".join(c for c in name if c.isalnum() or c in (' ', '.', '_')).rstrip()
+
+
 if __name__ == "__main__":
-    example = extract_response_features("https://albany.edu")
-    for k, v in example.items():
-        print(f"{k}: {v}")
+    target_url = input("Enter website URL (e.g., https://example.com): ").strip()
+    scrape_website(target_url)
