@@ -1,0 +1,44 @@
+Website Threat Checker – Evaluation Criteria
+--------------------------------------------
+
+1. Missing Security Headers (30%)
+   - Checks for key headers like:
+     Content-Security-Policy, Strict-Transport-Security,
+     X-Content-Type-Options, X-Frame-Options, Referrer-Policy,
+     Permissions-Policy, Cross-Origin-Resource-Policy, Cross-Origin-Opener-Policy.
+   - Weak or missing headers increase risk.
+
+2. SSL/TLS Issues (20%)
+   - Detects expired or soon-to-expire certificates.
+   - Flags outdated protocols (TLS 1.0/1.1) or invalid SSL.
+
+3. Mixed Content (10%)
+   - Finds HTTP (insecure) links or scripts on HTTPS pages.
+
+4. Information Disclosure (5%)
+   - Checks for “Server” or “X-Powered-By” headers leaking version info.
+
+5. Unsafe Forms (10%)
+   - Flags forms with:
+     - Sensitive fields using GET method
+     - Empty or relative actions
+     - HTTPS pages posting to HTTP endpoints.
+
+6. Inline Scripts without CSP (5%)
+   - Counts inline <script> tags when no CSP is defined.
+
+7. Exposed Emails and Phone Numbers (5%)
+   - Detects visible personal identifiers on the page.
+
+8. HTML Comments (5%)
+   - Finds leftover developer comments in source code.
+
+9. Insecure External Links (5%)
+   - Flags HTTP (non-HTTPS) external links.
+
+10. CMS Generator Tag (5%)
+    - Detects exposed meta "generator" tags revealing CMS details.
+
+Notes:
+- Non-200 HTTP status codes are noted but not scored.
+- Total Threat Score = Sum of all category contributions (max 100%).
